@@ -36,7 +36,7 @@
     <div class="container-fluid">
       <div class="row justify-content-end">
         <div class="row col-4 justify-content-end">
-          <div class="button btn-success col-12 col-sm-8 col-md-7 col-lg-5 text-center mx-3 mb-3 rounded">
+          <div class="button btn-add btn-success col-12 col-sm-8 col-md-7 col-lg-5 text-center mx-3 mb-3 rounded" onclick="toggleForm('show')">
             <i class="fa fa-plus-circle" aria-hidden="true"></i>
             <span>Add book</span>
           </div>
@@ -47,18 +47,18 @@
       <div class="row justify-content-between"> 
         <div class=" col-3 ">
           <div class="book text-white text-center bg-info">
-            <h4>100 years of solitude</h4>
-            <h6>Gabriel Garcia Marquez</h6>
-            <h6>456 pag.</h6>
+            <h4 class="book-title">100 years of solitude</h4>
+            <h6 class="book-author-pages">Gabriel Garcia Marquez</h6>
+            <h6 class="book-author-pages">456 pag.</h6>
           </div>
         </div>
         </div>
       </div>
     </main>
-    <div class="container-fluid shadow bg-dark position-absolut fixed-top"></div>
-    <div class="pop position-absolute bg-white  border border-dark rounded">
+    <div class="container-fluid d-none shadow bg-dark position-absolut fixed-top"></div>
+    <div class="pop d-none position-absolute bg-white  border border-dark rounded">
       <div class="bg-dark text-center py-2 text-white">Add a new book</div>
-      <form class="border border-dark text-center">
+      <form class="text-center">
         <label class="label pt-2 px-2 text-left" for="title">Title</label>
         <input class="field" type="text" name="title">
         <label class="label pt-2 px-2 text-left" for="author">Author</label>
@@ -71,8 +71,8 @@
         </div>
       </form>
       <div class="row justify-content-center">
-        <div class="btn-dark m-2 py-1 px-3 rounded button ">Close</div>
-        <div class="btn-dark m-2 py-1 px-3 rounded button">Save</div>
+        <div class="btn-dark m-2 py-1 px-3 rounded button " onclick="toggleForm('hide')" onsubmit="return false">Close</div>
+        <div class="btn-dark m-2 py-1 px-3 rounded button">Add</div>
       </div>
     </div>
   </body>

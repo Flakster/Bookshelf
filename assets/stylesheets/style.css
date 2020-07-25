@@ -3,6 +3,12 @@
   box-shadow: 3px 3px 3px grey;
 }
 
+.heading { font-size: 40px }
+.book-title { font-size: 0.8rem }
+.book-author-pages { font-size: 0.7rem }
+
+.btn-add {font-size: 0.9rem}
+
 .label {
   width: 90%;
 }
@@ -31,7 +37,7 @@
   right: 0; 
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 10px 10px 10px grey;
   z-index: 20;
 }
 
@@ -40,20 +46,37 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  .heading{ font-size: 40px }
+  .heading { font-size: 40px }
+  .book-title { font-size: 1rem }
+  .book-author-pages { font-size: 0.9rem }
+
+  .btn-add {font-size: 1rem}
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .heading{ font-size: 50px }
+  .book-title { font-size: 1.2rem }
+  .book-author-pages { font-size: 1.1rem }
+
+  .btn-add {font-size: 1.1rem}
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .heading{ font-size: 60px }
+  .book-title { font-size: 1.5rem }
+  .book-author-pages { font-size: 1.3rem }
+
+  .btn-add {font-size: 1.2rem}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .heading{ font-size: 65px }
+  .book-title { font-size: 1.6rem }
+  .book-author-pages { font-size: 1.4rem }
+
+  .btn-add {font-size: 1.3rem}
 
 }
