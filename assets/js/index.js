@@ -1,4 +1,7 @@
-let myLibrary = [];
+let myLibrary = [
+  { title: '1984', author: 'George Orwell', pages: 325, read: false},
+  { title: 'The Idiot', author: 'Fyodor Dostoyevsky',pages: 420, read: true}
+];
 
 function Book(title, author, pages, read) {
   this.title = title
@@ -24,3 +27,10 @@ function toggleForm(action) {
   }
 }
 
+function render(){
+  for (let i = 0; i < myLibrary.length ; i += 1){
+    console.log(myLibrary[i]);
+  }
+}
+ 
+render();
