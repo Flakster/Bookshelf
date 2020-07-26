@@ -37,6 +37,12 @@ function deleteBook(bookId) {
   window.location.reload();
 }
 
+function changeStatus(bookId) {
+  myLibrary[bookId].read = !myLibrary[bookId].read
+  localStorage.setItem("library", JSON.stringify(myLibrary));
+  window.location.reload(); 
+}
+
 function render(){
   myLibrary = JSON.parse(localStorage.getItem("library")) || [];
   const shelf = document.getElementsByClassName('shelf')[0];
@@ -53,9 +59,12 @@ function render(){
     newBook.children[0].innerHTML = myLibrary[i].title;
     newBook.children[1].innerHTML = myLibrary[i].author;
     newBook.children[2].innerHTML = `${myLibrary[i].pages} pages`;
-    newBook.children[3].innerHTML = `Read: ${myLibrary[i].read}`;
+    newBook.children[4].checked = myLibrary[i].read;
+    newBook.children[4].addEventListener('change', function(){
+      changeStatus(i);
+    });
     newBook.setAttribute('data-book-id', i);
-    newBook.children[4].addEventListener('click', function () 
+    newBook.children[5].addEventListener('click', function () 
     {
       deleteBook(i)
     });
