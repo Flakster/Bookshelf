@@ -12,7 +12,16 @@
 }
 .book-other-info { font-size: 0.7rem }
 
-.btn-add {font-size: 0.8rem}
+.btn-add {
+  width: 15vw;
+  min-width: 110px;
+  font-size: 0.8rem;
+  z-index: 0;
+}
+
+.delete-btn {
+  right: 10px;
+}
 
 .label {
   width: 90%;
