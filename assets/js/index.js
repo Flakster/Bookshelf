@@ -1,4 +1,4 @@
-let myLibrary = [];
+let myLibrary; // = [];
 
 function Book(title, author, pages, read) {
   this.title = title
@@ -38,7 +38,7 @@ function addBookToLibrary() {
 }
 
 function render(){
-  myLibrary = JSON.parse(localStorage.getItem("library"));
+  myLibrary = JSON.parse(localStorage.getItem("library")) || [];
   //localStorage.setItem("library", JSON.stringify(myLibrary));
   const shelf = document.getElementsByClassName('shelf')[0];
   const book = document.getElementsByClassName('book')[0];
