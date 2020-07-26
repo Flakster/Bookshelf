@@ -21,12 +21,6 @@
     <title>My Bookshelf</title>
   </head>
   <body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="assets/js/index.js"></script>
     <div class="container text-center py-3">
       <h1 class="heading display-3">
         <i class="fas fa-book-open text-danger"></i>
@@ -44,51 +38,49 @@
       </div>
     </div>
     <main class="container-fluid">
-      <div class="row justify-content-left"> 
-<!--         <div class=" col-3 ">
-        </div> -->
-        <div class="book text-white text-center bg-info px-2 m-2">
-          <h4 class="book-title">100 years of solitude</h4>
-          <h6 class="book-author-pages">Gabriel Garcia Marquez</h6>
-          <h6 class="book-author-pages">456 pag.</h6>
+      <div class="row shelf justify-content-left">
+        <div class="book d-none d-flex flex-column text-white bg-info px-2 m-2">
+          <h4 class="book-title"></h4>
+          <h6 class="book-other-info"></h6>
+          <h6 class="book-other-info"></h6>
+          <div class="book-other-info"></div>
+          <div class="mt-auto align-self-end">
+            <i class="fa fa-trash align-self-end" aria-hidden="true"></i>
+          </div>
         </div>          
-        <div class="book text-white text-center bg-info px-2 m-2">
-          <h4 class="book-title">100 years of solitude</h4>
-          <h6 class="book-author-pages">Gabriel Garcia Marquez</h6>
-          <h6 class="book-author-pages">456 pag.</h6>
-        </div>
-        <div class="book text-white text-center bg-info px-2 m-2">
-          <h4 class="book-title">100 years of solitude</h4>
-          <h6 class="book-author-pages">Gabriel Garcia Marquez</h6>
-          <h6 class="book-author-pages">456 pag.</h6>
-        </div>
-        <div class="book text-white text-center bg-info px-2 m-2">
-          <h4 class="book-title">100 years of solitude</h4>
-          <h6 class="book-author-pages">Gabriel Garcia Marquez</h6>
-          <h6 class="book-author-pages">456 pag.</h6>
-        </div>
-        </div>
-      </div>
-    </main>
-    <div class="container-fluid d-none shadow bg-dark position-absolut fixed-top"></div>
-    <div class="pop d-none position-absolute bg-white  border border-dark rounded">
-      <div class="bg-dark text-center py-2 text-white">Add a new book</div>
-      <form class="text-center">
-        <label class="label pt-2 px-2 text-left" for="title">Title</label>
-        <input class="field" type="text" name="title">
-        <label class="label pt-2 px-2 text-left" for="author">Author</label>
-        <input class="field" type="text" name="author">
-        <label class="label pt-2 px-2 text-left" for="pages">Pages</label>
-        <input class="field" type="number" name="pages">
-        <div>
-          <label class="px-2 pt-2 " for="read">Already read</label>
-          <input type="checkbox" name="read">
-        </div>
-      </form>
-      <div class="row justify-content-center">
-        <div class="btn-dark m-2 py-1 px-3 rounded button " onclick="toggleForm('hide')" onsubmit="return false">Close</div>
-        <div class="btn-dark m-2 py-1 px-3 rounded button">Add</div>
       </div>
     </div>
+  </div>
+</main>
+<div class="container-fluid d-none shadow bg-dark position-absolut fixed-top"></div>
+<div class="pop d-none position-absolute bg-white  border border-dark rounded">
+  <div class="bg-dark d-flex text-center py-2 text-white">
+    <div class="pop-title">Add a new book</div>
+    <i class="fa fa-window-close pop-close" btn-dark aria-hidden="true" onclick="toggleForm('hide')"></i>
+  </div>
+  <form class="text-center">
+    <label class="label pt-2 px-2 text-left" for="title">Title</label>
+    <input id = "form-title" class="field" type="text" name="title">
+    <label class="label pt-2 px-2 text-left" for="author">Author</label>
+    <input id = "form-author" class="field" type="text" name="author">
+    <label class="label pt-2 px-2 text-left" for="pages">Pages</label>
+    <input id = "form-pages" class="field" type="number" name="pages">
+    <div class="text-left">
+      <label class="pl-4 pr-2 pt-2 " for="read">Already read</label>
+      <input id = "form-read" type="checkbox" name="read">
+    </div>
+    <input type="submit" class="btn-dark m-2 py-1 px-5 rounded button" onclick="addBookToLibrary()" value= "Add">
+  </form>
+  <div class="row justify-content-center">
+  
+<!--     <div class="btn-dark " onclick="addBookToLibrary()">Add</div>
+ -->  </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="assets/js/index.js"></script>
   </body>
-</html>
+  </html>
