@@ -21,6 +21,7 @@
 
 .delete-btn {
   right: 10px;
+  cursor: pointer;
 }
 
 .label {

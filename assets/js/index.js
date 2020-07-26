@@ -20,12 +20,6 @@ function toggleForm(action) {
   }
 }
 
-function clearForm(){
-  document.getElementById('form-title').innerHTML = '';
-  document.getElementById('form-author').innerHTML = '';
-  document.getElementById('form-pages').innerHTML = '';
-  document.getElementById('form-read').checked = false;
-}
 
 function addBookToLibrary() {
   const title = document.getElementById('form-title').value;
@@ -37,9 +31,14 @@ function addBookToLibrary() {
   localStorage.setItem("library", JSON.stringify(myLibrary));
 }
 
+function deleteBook(bookId) {
+  myLibrary.splice(bookId,1);
+  localStorage.setItem("library", JSON.stringify(myLibrary));
+  window.location.reload();
+}
+
 function render(){
   myLibrary = JSON.parse(localStorage.getItem("library")) || [];
-  //localStorage.setItem("library", JSON.stringify(myLibrary));
   const shelf = document.getElementsByClassName('shelf')[0];
   const book = document.getElementsByClassName('book')[0];
   let newBook;
@@ -56,6 +55,10 @@ function render(){
     newBook.children[2].innerHTML = `${myLibrary[i].pages} pages`;
     newBook.children[3].innerHTML = `Read: ${myLibrary[i].read}`;
     newBook.setAttribute('data-book-id', i);
+    newBook.children[4].addEventListener('click', function () 
+    {
+      deleteBook(i)
+    });
   }
 }
 
